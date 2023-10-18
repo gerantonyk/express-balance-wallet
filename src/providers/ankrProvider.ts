@@ -42,8 +42,9 @@ export class Provider {
     return assets.map((asset) => {
       return {
         ...asset,
-        balanceReferenceToken:
-          Number(asset.balanceUsd) / Number(referenceToken.usdPrice),
+        balanceReferenceToken: (
+          Number(asset.balanceUsd) / Number(referenceToken.usdPrice)
+        ).toFixed(9),
       };
     });
   }
