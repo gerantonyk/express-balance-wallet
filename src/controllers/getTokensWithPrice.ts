@@ -18,8 +18,7 @@ export const getTokensWithPrice = async (req: Request, res: Response) => {
   }
 
   try {
-    const tokens = await provider.getTokensWithPrice(tokenRequest); // Usa el token y address según sea necesario
-    console.log(tokens);
+    const tokens = await provider.getTokensWithPrice(tokenRequest);
     res.json({ tokens });
   } catch (error) {
     console.error(error);
