@@ -6,7 +6,6 @@ import { Blockchain } from '@ankr.com/ankr.js';
 const provider = new Provider();
 
 export const getTokensWithPrice = async (req: Request, res: Response) => {
-  console.log(req.query);
   const tokenRequest: GetTokensWithPriceDto = {
     walletAddress: req.query.walletAddress as string,
     blockchain: (req.query.blockchain || 'eth') as Blockchain,

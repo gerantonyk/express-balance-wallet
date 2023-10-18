@@ -1,5 +1,9 @@
 import dotenv from 'dotenv';
-import { AnkrProvider, GetTokenPriceReply } from '@ankr.com/ankr.js';
+import {
+  AnkrProvider,
+  Blockchain,
+  GetTokenPriceReply,
+} from '@ankr.com/ankr.js';
 import { GetTokensWithPriceDto } from '../dtos/getTokensWithPrice.dto';
 dotenv.config();
 
@@ -42,5 +46,9 @@ export class Provider {
           Number(asset.balanceUsd) / Number(referenceToken.usdPrice),
       };
     });
+  }
+
+  async getCurrencies(blockchain: Blockchain) {
+    return await this.provider.getCurrencies({ blockchain });
   }
 }
