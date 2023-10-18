@@ -49,6 +49,8 @@ export class Provider {
   }
 
   async getCurrencies(blockchain: Blockchain) {
-    return await this.provider.getCurrencies({ blockchain });
+    const response = await this.provider.getCurrencies({ blockchain });
+    const { currencies } = response;
+    return currencies;
   }
 }
