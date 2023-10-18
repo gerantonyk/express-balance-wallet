@@ -11,7 +11,6 @@ export const getTokensWithPrice = async (req: Request, res: Response) => {
     blockchain: (req.query.blockchain || 'eth') as Blockchain,
     contractAddress: req.query.contractAddress as string | undefined,
   };
-
   if (!tokenRequest.walletAddress) {
     return res.status(400).send('walletAddress is required');
   }

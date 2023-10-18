@@ -6,7 +6,7 @@ const provider = new Provider();
 
 export const getCurrencies = async (req: Request, res: Response) => {
   const blockchain = (req.query.blockchain || 'eth') as Blockchain;
-
+  console.log(blockchain);
   try {
     const currencies = await provider.getCurrencies(blockchain);
     res.json({ currencies });
